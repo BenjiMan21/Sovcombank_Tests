@@ -1,4 +1,4 @@
-name: Java CI with Maven
+name: Java CI with Maven and Selenide
 
 on:
   push:
@@ -27,6 +27,22 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
+
+      - name: Install Chrome
+        run: sudo apt-get update && sudo apt-get install -y google-chrome-stable
+
+      - name: Install ChromeDriver
+        run: |
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+')
+          LATEST=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION)
+          wget -N https://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip
+          sudo mv chromedriver /usr/bin/chromedriver
+          sudo chmod +x /usr/bin/chromedriver
+
+      - name: Set Chrome options for headless Selenide
+        run: |
+          echo "export SELENIDE_HEADLESS=true" >> $GITHUB_ENV
 
       - name: Build project
         run: mvn clean compile
