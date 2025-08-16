@@ -24,7 +24,7 @@ public class FindVacancyTests extends TestBase {
                 .setCity(cityName)
                 .setJob(jobName)
                 .clickFindButton();
-        vacanciesPage.checkVacancies(jobName);
+        vacanciesPage.checkVacancies(jobName) ;
     }
 
     @ParameterizedTest
