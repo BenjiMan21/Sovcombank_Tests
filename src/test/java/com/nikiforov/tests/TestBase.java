@@ -15,11 +15,11 @@ public class TestBase {
 //    Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
     ChromeOptions options = new ChromeOptions();
-    options.addArguments("--headless=new");
     options.addArguments("--incognito");
-    options.addArguments("--no-sandbox");
-    options.addArguments("--disable-dev-shm-usage");
-    options.addArguments("--disable-gpu");
+//    options.addArguments("--headless=new");
+//    options.addArguments("--no-sandbox");
+//    options.addArguments("--disable-dev-shm-usage");
+//    options.addArguments("--disable-gpu");
 //    options.addArguments("--disable-extensions");
     Configuration.browserCapabilities = options;
     }
