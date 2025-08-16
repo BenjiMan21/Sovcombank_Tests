@@ -42,13 +42,13 @@ jobs:
 
       - name: Set Chrome options for headless Selenide
         run: |
-          echo "export SELENIDE_HEADLESS=true" >> $GITHUB_ENV
+          echo "SELENIDE_HEADLESS=true" >> $GITHUB_ENV
 
-      - name: Build project
-        run: mvn clean compile
+      - name: Validate project and run Checkstyle
+        run: mvn validate checkstyle:check
 
-      - name: Run Checkstyle
-        run: mvn checkstyle:check
+      - name: Compile project
+        run: mvn compile
 
       - name: Run tests
         run: mvn test
