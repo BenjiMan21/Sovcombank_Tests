@@ -18,7 +18,7 @@ public class BeginCareerPage {
     private final ElementsCollection okButton = $$("button");
 
 
-    public  BeginCareerPage clickTraineeButton() {
+    public BeginCareerPage clickTraineeButton() {
         traineeButton.click();
         return this;
     }
@@ -35,6 +35,7 @@ public class BeginCareerPage {
         arrowCompanySelector.click();
         return this;
     }
+
     public BeginCareerPage clickOk() {
         okButton.findBy(text(" Ок ")).click();
         return this;
@@ -42,6 +43,6 @@ public class BeginCareerPage {
 
     public BeginCareerPage jobCheck(String value) {
         jobCheck.shouldHave(text(value));
-        return  this;
+        return this;
     }
 }
