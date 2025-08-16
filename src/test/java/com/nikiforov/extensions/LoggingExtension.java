@@ -1,4 +1,4 @@
-package com.nikiforov;
+package com.nikiforov.extensions;
 
 import org.junit.jupiter.api.extension.BeforeTestExecutionCallback;
 import org.junit.jupiter.api.extension.AfterTestExecutionCallback;

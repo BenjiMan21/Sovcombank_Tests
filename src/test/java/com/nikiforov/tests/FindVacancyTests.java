@@ -1,5 +1,6 @@
-package com.nikiforov;
+package com.nikiforov.tests;
 
+import com.nikiforov.extensions.LoggingExtension;
 import com.nikiforov.pages.BeginCareerPage;
 import com.nikiforov.pages.MainPage;
 import com.nikiforov.pages.VacanciesByCityPage;
